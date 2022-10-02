@@ -16,7 +16,7 @@ function Home() {
 				muted
 				loop
 				style={styles.video}
-				src="/vid.mp4"
+				src="/Vid.mp4"
 				type="video/mp4"
 			></video>
 			<Row className="rowHeader">
