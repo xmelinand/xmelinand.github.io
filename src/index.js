@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './fonts/Migra-Semibold.otf';
+import './fonts/Maelstrom Sans Bold.otf';
+import './fonts/NeueMontreal-Regular.otf';
+import './fonts/TuskerGrotesk-2600Semibold.otf';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

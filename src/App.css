@@ -36,3 +36,155 @@
     transform: rotate(360deg);
   }
 }
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #fd7f00;
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+html {
+  font-size: 2.2vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+html body {
+  padding: 0;
+  margin: 0;
+  overflow-x: inherit;
+  background-color: #282c34;
+
+}
+
+
+.headerText {
+  margin-Bottom:0;
+  margin-left: 0.5rem;
+}
+/* FONTS */
+.migra {
+  font-family: "Migra-Semibold";
+}
+.maelstrom {
+  font-family: "Maelstrom Sans Bold";
+}
+.neueMontreal {
+  font-family: "NeueMontreal-Regular";
+}
+.tuskerGrotesk {
+  font-family: "TuskerGrotesk-2600Semibold";
+}
+
+
+.grad1 {
+  background-image: linear-gradient( 155deg, rgba(0,0,0,0)65%, rgba(253,240,213,0.25));
+}
+
+.day{
+  color: #fdf0d5;
+  font-size: 9em;
+}
+.month{
+  font-size: 1rem;
+  color: #fdf0d5;
+  line-height: 1rem;
+  width: 4rem;
+  margin-left: 0.5rem;
+
+}
+
+.month1 {
+  font-size: 2.5rem;
+}
+
+.header {
+  display: flex;
+  padding:2rem;
+  flex:1;
+  color: #fdf0d5;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 0.5px solid rgba(253, 240, 213, 0.5); */
+}
+
+.title {
+  font-size: 12rem; 
+  line-height: 8rem; 
+  color: #fdf0d5;
+}
+
+.presentation {
+  text-align: right;
+  color: #fdf0d5;
+  padding-right: 2rem;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.contact{
+  margin-top: 2rem;
+  position:absolute;
+  bottom : 2rem;
+  right :2rem
+}
+
+#work{
+  text-align: flex-end;
+}
+
+@keyframes rollout {
+  0% { 
+    transform: translateY(+2rem);
+    opacity: 0 }
+  100% { 
+    transform: none;
+    opacity: 1
+   }
+}
+
+.roll-out {
+  animation: rollout 0.9s;
+}
+.roll-out1 {
+  animation: rollout 1.4s;
+}
+.roll-out2 {
+  animation: rollout 1.9s;
+}

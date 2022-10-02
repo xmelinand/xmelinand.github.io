@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Migra-Semibold";
+  src: local("Migra-Semibold"),
+   url("./fonts/Migra-Semibold.otf") format("truetype");
+  font-weight:normal
+  }
+@font-face {
+  font-family: "Maelstrom Sans Bold";
+  src: local("Migra-Semibold"),
+   url("./fonts/Maelstrom Sans Bold.otf") format("truetype");
+  font-weight:bold
+  }
+@font-face {
+  font-family: "NeueMontreal-Regular";
+  src: local("NeueMontreal-Regular"),
+   url("./fonts/NeueMontreal-Regular.otf") format("truetype");
+  font-weight:normal
+  }
+@font-face {
+  font-family: "TuskerGrotesk-2600Semibold";
+  src: local("TuskerGrotesk-2600Semibold"),
+   url("./fonts/TuskerGrotesk-2600Semibold.otf") format("truetype");
+  font-weight:normal
+  }
