@@ -133,7 +133,7 @@ html body {
 
 .header {
   display: flex;
-  padding:2rem;
+  padding:2rem 2rem 1.2rem 2rem;
   flex:1;
   color: #fdf0d5;
   background: rgba(0, 0, 0, 0.1);
@@ -148,6 +148,12 @@ html body {
   line-height: 8rem; 
   color: #fdf0d5;
 }
+.subtitle {
+  font-size: 7rem; 
+  color: #fdf0d5;
+  border-bottom: 0.5px solid rgba(253, 240, 213, 0.5); 
+}
+
 
 .presentation {
   text-align: right;
@@ -171,7 +177,7 @@ html body {
 
 @keyframes rollout {
   0% { 
-    transform: translateY(+2rem);
+    transform: translateY(+3rem);
     opacity: 0 }
   100% { 
     transform: none;

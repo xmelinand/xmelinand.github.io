@@ -19,34 +19,42 @@ function Home() {
 				src="/Vid.mp4"
 				type="video/mp4"
 			></video>
-			<Row className="rowHeader">
+			<Row>
 				<Col>
 					<div className="header">
-						<div>
-							<h5 className="headerText migra" style={{ marginLeft: "1.7rem" }}>
-								Xavier Melinand
-							</h5>
-						</div>
-						<div>
-							<h5 className="headerText neueMontreal">
+						<div style={{ display: "flex", flexDirection: "row" }}>
+							<img
+								src="../icon.png"
+								style={{ height: "2rem", alignSelf: "end" }}
+							/>
+							<h6
+								className="headerText neueMontreal"
+								style={{ fontWeight: "bold", marginLeft: "1.7rem" }}
+							>
+								xavierMELINAND
+							</h6>
+							<h6
+								className="headerText neueMontreal"
+								style={styles.headerElements}
+							>
 								FULL STACK DEVELOPER / REACT / REACT NATIVE
-							</h5>
+							</h6>
 						</div>
-							<div style={{ display: "flex", margin: "0.3rem" }}>
-								<p className="headerText neueMontreal">works</p>
-								<p className="headerText">|</p>
-								<p className="headerText neueMontreal">about</p>
-								<p className="headerText">|</p>
-								<p className="headerText neueMontreal">contact</p>
-								{/* <p className="headerText">//</p>
+						<div style={{ display: "flex", margin: "0.3rem" }}>
+							<p className="headerText neueMontreal">works</p>
+							<p className="headerText">|</p>
+							<p className="headerText neueMontreal">about</p>
+							<p className="headerText">|</p>
+							<p className="headerText neueMontreal">contact</p>
+							{/* <p className="headerText">//</p>
 								<p className="headerText neueMontreal">Français</p>
 								<p className="headerText">|</p>
 								<p className="headerText neueMontreal">English</p> */}
-							</div>
+						</div>
 					</div>
 				</Col>
 			</Row>
-			<Row xs="2" style={{ padding: "2rem" }}>
+			<Row xs="2" style={{ padding: "2rem", marginTop: "1.2rem" }}>
 				{/* left content */}
 				<Col>
 					<div className="d-flex">
@@ -67,7 +75,7 @@ function Home() {
 				</Col>
 				{/* right content */}
 				<Col>
-					<div style={styles.dateContainer} className='roll-out'>
+					<div style={styles.dateContainer} className="roll-out">
 						<p className="day maelstrom">{today}</p>
 						<div className="month">
 							<p id="work" className="migra month1">
@@ -80,7 +88,7 @@ function Home() {
 						style={styles.presentation}
 						className="neueMontreal grad1 presentation"
 					>
-						<p style={{marginBottom:"0px"}}>
+						<p style={{ marginBottom: "0px" }}>
 							Hello there, my name is{" "}
 							<span style={{ fontWeight: "bold" }}>Xavier</span>.
 							<br />
@@ -100,57 +108,25 @@ function Home() {
 					</div>
 				</Col>
 			</Row>{" "}
-			<Row xs="2" style={{ padding: "2rem" }}>
-				{/* left content */}
+			<Row style={{ padding: "2rem", marginTop: "1rem" }}>
+				{/* title - ABOUT */}
 				<Col>
-					<div className="d-flex roll-out">
-						<p className="tuskerGrotesk title">
-							<span className="migra" style={{ fontSize: "2rem" }}>
-								Really cool
-							</span>
-							<br />
-							WEB
-							<span className="migra" style={{ fontSize: "2rem" }}>
-								&
-							</span>
-							MOBILE
-							<br />
-							DEVELOPER
-						</p>
+					<div>
+						<h2 className="subtitle tuskerGrotesk">ABOUT ME</h2>
 					</div>
 				</Col>
-				{/* right content */}
+			</Row>
+			<Row style={{ padding: "2rem", marginTop: "1rem" }}>
 				<Col>
-					<div style={styles.dateContainer}>
-						<p className="day maelstrom">{today}</p>
-						<div className="month">
-							<p id="work" className="migra month1">
-								{month}
-							</p>
-							<p>Available for work</p>
-						</div>
+					<div>
+						<h2 className="subtitle tuskerGrotesk">MY WORKS</h2>
 					</div>
-					<div
-						style={styles.presentation}
-						className="neueMontreal grad1 presentation"
-					>
-						<p>
-							Hello there, my name is{" "}
-							<span style={{ fontWeight: "bold" }}>Xavier</span>.
-							<br />
-							<br /> I am a web developer with a designer background based in
-							Canada. I’m passionate about digital works and currently looking
-							for my first job as a web developer in a company, preferably in
-							JavaScript frameworks.
-							<br />
-							<br /> Still, I keep myself open to other languages like Java, C++
-							or C#.
-							<br />
-							<br /> I have a particular set of skills due to my former work
-							experiences and would be happy to make the best of it in my new
-							career in tech. I love expressionism, dogs, cinema, metal and
-							pizza.
-						</p>
+				</Col>
+			</Row>
+			<Row style={{ padding: "2rem", marginTop: "1rem" }}>
+				<Col>
+					<div>
+						<h2 className="subtitle tuskerGrotesk">CONTACT ME</h2>
 					</div>
 				</Col>
 			</Row>
@@ -180,5 +156,8 @@ const styles = {
 		justifyContent: "flex-end",
 		alignItems: "center",
 		paddingRight: "2rem",
+	},
+	headerElements: {
+		marginLeft: "1.7rem",
 	},
 };
