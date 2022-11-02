@@ -24,10 +24,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -64,20 +60,18 @@
 }
 
 .App-link {
-  color: #fd7f00;
+  color: #fd7f00!important;
+  /* margin-right:10px; */
+
+}
+.App-link:hover {
+  color: red!important;
+  cursor: pointer;
+  /* margin-right:10px; */
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 html {
-  font-size: 2.2vh;
+  font-size: calc(10px + 0.7vmin);
   box-sizing: border-box;
   overflow-x: hidden;
 }
@@ -131,28 +125,11 @@ html body {
   font-size: 2.5rem;
 }
 
-.header {
-  display: flex;
-  padding:2rem 2rem 1.2rem 2rem;
-  flex:1;
-  color: #fdf0d5;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  justify-content: space-between;
-  align-items: center;
-  /* border-bottom: 0.5px solid rgba(253, 240, 213, 0.5); */
-}
-
 .title {
   font-size: 12rem; 
   line-height: 8rem; 
   color: #fdf0d5;
-}
-.subtitle {
-  font-size: 7rem; 
-  color: #fdf0d5;
-  border-bottom: 0.5px solid rgba(253, 240, 213, 0.5); 
-}
+} 
 
 
 .presentation {
@@ -162,6 +139,7 @@ html body {
   border-radius: 0.5rem;
   padding: 2rem;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
 }
 
 .contact{
