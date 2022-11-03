@@ -14,6 +14,7 @@ export default function Projects() {
             <Grid item xs={12} md={6} lg={4}>
 			<CustomCards
 				title={project.name}
+                subtitle={project.subtitle}
 				tech={project.tech}
 				languages={project.languages}
 				preview={project.preview}

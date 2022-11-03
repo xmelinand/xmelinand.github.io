@@ -13,10 +13,10 @@ import {
 	Button,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const CustomCards = ({
 	title,
+    subtitle,
 	tech,
 	languages,
 	preview,
@@ -42,13 +42,13 @@ const CustomCards = ({
 	return (
 			<Card>
 				<CardHeader
-					action={
-						<IconButton aria-label="settings">
-							<MoreVertIcon />
-						</IconButton>
-					}
+					// action={
+					// 	<IconButton aria-label="settings">
+					// 		<MoreVertIcon />
+					// 	</IconButton>
+					// }
 					title={title}
-					subheader="September 14, 2016"
+					subheader={subtitle}
 				/>
 				<Box>{preview}</Box>
 				<CardActions disableSpacing>
@@ -69,7 +69,6 @@ const CustomCards = ({
 				</CardActions>
 				<Collapse in={expanded} timeout="auto" unmountOnExit>
 					<CardContent>
-						<Typography paragraph>Techs:</Typography>
 						{tech.map(function (tech, i) {
 							return <Chip key={i} sx={{ m: 0.5 }} label={tech} />;
 						})}

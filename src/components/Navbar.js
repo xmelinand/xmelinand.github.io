@@ -13,8 +13,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["ABOUT", "WORKS", "CONTACT"];
 
 function Navbar(props) {
 	const { window } = props;
@@ -26,6 +25,7 @@ function Navbar(props) {
 
 	const drawerItems = navItems.map((item) => (
 		<ListItem
+		sx={styles.listItems}
 			key={item}
 			disablePadding
 			onClick={() => {
@@ -45,8 +45,8 @@ function Navbar(props) {
 	));
 
 	const drawer = (
-		<Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-			<Typography variant="h6" sx={{ my: 2 }}>
+		<Box onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
+			<Typography variant="h6" sx={{ my: 2, color:'orange' }}>
 				X-WORKS
 			</Typography>
 			<Divider />
@@ -60,23 +60,18 @@ function Navbar(props) {
 	return (
 		<Box
 		>
-			<AppBar component="nav" sx={{
-  color: '#fdf0d5',
-  background: 'rgba(0, 0, 0, 0.1)',
-  backdropFilter: 'blur(8px)',
-}}>
-				<Toolbar>
+			<AppBar component="nav" sx={styles.appBar}>
+				<Toolbar sx={{display:'flex', justifyContent:'space-between'}}>
 					<IconButton
 						color="inherit"
 						aria-label="open drawer"
 						edge="start"
 						onClick={handleDrawerToggle}
-						sx={{ mr: {xs:'auto', md:3}, display: { md: "none" } }}
+						sx={{ mr: 3, display: { md: "none" } }}
 					>
 						<MenuIcon />
 					</IconButton>
-					<Box sx={{ display: "flex", alignItems: "center" }}>
-						<Box sx={{ mr: 3 }}>
+						<Box sx={{ mr: {xs:0, md:3 }, ml:{xs:6, md:0}}}>
 							<img height="20rem" alt='orange x-shaped logo' src="../../icon.png" />
 						</Box>
 						<Box>
@@ -84,7 +79,6 @@ function Navbar(props) {
 								xavierMELINAND
 							</Typography>
 						</Box>
-					</Box>
 					<Typography sx={{ mr:'auto', display: { xs: "none", md: "flex" } }}>
 						FULL STACK // REACT DEVELOPER // REACT NATIVE DEVELOPER
 					</Typography>
@@ -106,13 +100,7 @@ function Navbar(props) {
 					ModalProps={{
 						keepMounted: true, // Better open performance on mobile.
 					}}
-					sx={{
-						display: { xs: "block", md: "none" },
-						"& .MuiDrawer-paper": {
-							boxSizing: "border-box",
-							width: drawerWidth,
-						},
-					}}
+					sx={styles.drawerSx}
 				>
 					{drawer}
 				</Drawer>
@@ -122,3 +110,27 @@ function Navbar(props) {
 }
 
 export default Navbar;
+
+const styles = {
+	appBar:{
+		color: '#fdf0d5',
+		background: 'rgba(0, 0, 0, 0.1)',
+		backdropFilter: 'blur(8px)',
+	  },
+	listItems:{
+		backgroundColor: 'transparent',
+		color: '#fff',
+		'&:hover': {
+		  backgroundColor: '#1c1f25',
+		  transition:'1s'
+	  },
+	},
+	drawerSx:{
+		display: { xs: "block", md: "none" },
+		"& .MuiDrawer-paper": {
+			boxSizing: "border-box",
+			width: {xs:250, md:400},
+			backgroundColor:"#282c34" 
+		},
+	}
+}

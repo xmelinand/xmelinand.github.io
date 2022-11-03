@@ -11,8 +11,9 @@ function Home() {
 	return (
 		<Grid container={true} sx={styles.container}>
 			<video autoPlay muted loop src="../Vid.mp4" style={styles.video} />
+			{/* <img style={styles.backitem} src='../backitem.png' alt="red stripes" /> */}
 			{/* //* left content */}
-			<Grid xs={12} md={8} sx={{ height: "100vh" }}>
+			<Grid xs={12} md={6} sx={{ paddingTop:"2rem" }}>
 				<Typography sx={styles.title} className="roll-out">
 					<span className="migra" style={{ fontSize: "2rem" }}>
 						Really cool
@@ -28,7 +29,7 @@ function Home() {
 				</Typography>
 			</Grid>
 			{/* //* Date + Bio */}
-			<Grid xs={12} md={4}>
+			<Grid xs={12} md={6}>
 				<Box sx={styles.dateContainer} className="roll-out">
 					<p className="day maelstrom">{today}</p>
 					<div className="month">
@@ -40,11 +41,11 @@ function Home() {
 				</Box>
 				<Box
 					sx={styles.presentation}
-					className="neueMontreal grad1 roll-out presentation"
+					className="neueMontreal roll-out presentation"
 				>
 					<p style={{ marginBottom: "0px" }}>
-						Hello there, my name is{" "}
-						<span style={{ fontWeight: "bold" }}>Xavier</span>.
+					<span style={styles.highlight}>Hello there</span>, my name is{" "}
+						<span style={{color:'red'}}>Xavier</span>.
 						<br />
 						<br /> I am a web developer with a designer background based in
 						Canada. I’m passionate about digital works and currently looking for
@@ -54,9 +55,9 @@ function Home() {
 						<br /> Still, I keep myself open to other languages like Java, C++
 						or C#.
 						<br />
-						<br /> I have a particular set of skills due to my former work
+						<br /> <span style={styles.highlight}>I have a particular set of skills</span> due to my former work
 						experiences and would be happy to make the best of it in my new
-						career in tech. I love expressionism, minimalist design, metal and
+						career in tech. I love expressionism, minimalist design,<span style={styles.highlight}>cinema</span> metal and
 						pizza.
 					</p>
 				</Box>
@@ -67,11 +68,13 @@ function Home() {
 						<Typography sx={styles.subtitle}>ABOUT ME</Typography>
 					</Box>
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} >
+				<img style={styles.backitem2} src='../backitem.png' alt="red stripes" />
+
 				<Typography sx={styles.subtitle}>MY WORKS</Typography>
 					<Projects />
 				</Grid>
-				<Grid item xs={12}>
+				<Grid item xs={12} sx={{ pt: 2.5 }}>
 				<Typography sx={styles.subtitle}>CONTACT ME</Typography>
 				</Grid>
 			</Grid>
@@ -90,6 +93,7 @@ const styles = {
 		objectFit: "fill",
 		height: "100%",
 		width: "100%",
+		overflow:'hidden',
 		zIndex: "-1",
 		position: "absolute",
 		top: "0px",
@@ -101,10 +105,10 @@ const styles = {
 		fontSize: "12rem",
 		lineHeight: "8rem",
 		textAlign: "start",
-		mt: 20,
+		mt: {md:14},
 	},
 	dateContainer: {
-		mt: {xs:0, md:6},
+		mt: {xs:0, md:12.5},
 		mr:'2rem',
 		display: { xs: "none", md: "flex" },
 		justifyContent: "flex-end",
@@ -120,6 +124,27 @@ const styles = {
 		borderBottom: '0.5px solid rgba(253, 240, 213, 0.5)', 
 	},
 	presentation: {
-		backgroundColor: "rgba(0,0,0,0.3)"
+		backgroundColor: "#282c34",
+		marginBottom: "2rem",
+		marginTop:'2rem',
 	},
+	highlight:{
+		color:'orange',
+		fontWeight: 'bold',
+	},
+	// backitem:{
+	// 	width: "100%",
+	// 	overflow:'hidden',
+	// 	zIndex: "-1",
+	// 	position: "absolute",
+	// 	top: "110rem",
+	// 	left: "0px",
+	// },
+	backitem2:{
+		width: "100%",
+		overflow:'hidden',
+		zIndex: "-1",
+		position: "absolute",
+		left: "0px",
+	}
 };
