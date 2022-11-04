@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.722b5649.css",
-    "main.js": "/static/js/main.fad4f01f.js",
+    "main.css": "/static/css/main.825a4c11.css",
+    "main.js": "/static/js/main.ecde1332.js",
     "static/js/787.5302b6ca.chunk.js": "/static/js/787.5302b6ca.chunk.js",
     "static/media/Maelstrom Sans Bold.otf": "/static/media/Maelstrom Sans Bold.8332d73120e64c8d3edc.otf",
     "static/media/Migra-Semibold.otf": "/static/media/Migra-Semibold.1bc472c61893102ad131.otf",
     "static/media/NeueMontreal-Regular.otf": "/static/media/NeueMontreal-Regular.140bfb4a71fe08805d92.otf",
     "static/media/TuskerGrotesk-2600Semibold.otf": "/static/media/TuskerGrotesk-2600Semibold.334c714b1761a82d1ab6.otf",
     "index.html": "/index.html",
-    "main.722b5649.css.map": "/static/css/main.722b5649.css.map",
-    "main.fad4f01f.js.map": "/static/js/main.fad4f01f.js.map",
+    "main.825a4c11.css.map": "/static/css/main.825a4c11.css.map",
+    "main.ecde1332.js.map": "/static/js/main.ecde1332.js.map",
     "787.5302b6ca.chunk.js.map": "/static/js/787.5302b6ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.722b5649.css",
-    "static/js/main.fad4f01f.js"
+    "static/css/main.825a4c11.css",
+    "static/js/main.ecde1332.js"
   ]
 }
