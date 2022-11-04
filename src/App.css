@@ -118,7 +118,6 @@ html body {
   line-height: 1rem;
   width: 4rem;
   margin-left: 0.5rem;
-
 }
 
 .month1 {
@@ -126,19 +125,27 @@ html body {
 }
 
 .title {
-  font-size: 12rem; 
-  line-height: 8rem; 
+  font-size: 10rem; 
+  line-height: 7rem; 
   color: #fdf0d5;
 } 
 
 
-.presentation {
+.intro {
   text-align: right;
+  font-size: 1.3rem;
   color: #fdf0d5;
   padding-right: 2rem;
   border-radius: 0.5rem;
   padding: 2rem;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+.presentation {
+  font-size: 1.6rem;
+  color: #fdf0d5;
+  padding-right: 2rem;
+  padding-top: 2rem;
   text-transform: uppercase;
 }
 

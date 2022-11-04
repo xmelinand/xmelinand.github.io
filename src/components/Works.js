@@ -1,6 +1,6 @@
-import { React } from "react";
+import { React, forwardRef } from "react";
 import {
-	Grid,
+	Grid, Typography,
 } from "@mui/material";
 import projects from "../data/projects";
 import CustomCards from "./CustomCards";
@@ -8,10 +8,10 @@ import CustomCards from "./CustomCards";
 
 
 
-export default function Projects() {
+const Projects = forwardRef((props, ref) => {
 	const works = projects.map(function (project, i) {
 		return (
-            <Grid item xs={12} md={6} lg={4}>
+            <Grid ref={ref} item xs={12} md={6} lg={4}>
 			<CustomCards
 				title={project.name}
                 subtitle={project.subtitle}
@@ -25,15 +25,35 @@ export default function Projects() {
 		);
 	});
 	return (
+        				<Grid item xs={12} >
+				<img style={styles.backitem} src='../backitem.png' alt="red stripes" />
+				<Typography sx={styles.subtitle}>MY WORKS</Typography>
 		<Grid container spacing={3} sx={styles.container}>
 			{works}
 		</Grid>
+        </Grid>
 	);
-}
+})
+
+export default Projects;
 
 const styles = {
 	container: {
 		display: "flex",
 		marginTop: 3,
+	},
+    backitem:{
+		width: "100%",
+		overflow:'hidden',
+		zIndex: "-1",
+		position: "absolute",
+		left: "0px",
+	},
+    subtitle: {
+		fontFamily: "TuskerGrotesk-2600Semibold",
+		fontSize: "7rem",
+		color: "#fdf0d5",
+		position: "relative",
+		borderBottom: "0.5px solid rgba(253, 240, 213, 0.5)",
 	},
 };

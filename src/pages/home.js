@@ -1,7 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { React } from "react";
-import { Grid, Box, Typography } from "@mui/material";
+import { Grid, Box, Typography, Button } from "@mui/material";
 import Projects from "../components/Works";
+import Contact from "../components/Contact";
+import About from "../components/About";
 
 function Home() {
 	const date = new Date().toUTCString().split(" ");
@@ -11,9 +13,8 @@ function Home() {
 	return (
 		<Grid container={true} sx={styles.container}>
 			<video autoPlay muted loop src="../Vid.mp4" style={styles.video} />
-			{/* <img style={styles.backitem} src='../backitem.png' alt="red stripes" /> */}
 			{/* //* left content */}
-			<Grid xs={12} md={6} sx={{ paddingTop:"2rem" }}>
+			<Grid xs={12} md={6} sx={{ paddingTop: "2rem" }}>
 				<Typography sx={styles.title} className="roll-out">
 					<span className="migra" style={{ fontSize: "2rem" }}>
 						Really cool
@@ -39,44 +40,22 @@ function Home() {
 						<p>Available for work</p>
 					</div>
 				</Box>
-				<Box
-					sx={styles.presentation}
-					className="neueMontreal roll-out presentation"
-				>
-					<p style={{ marginBottom: "0px" }}>
-					<span style={styles.highlight}>Hello there</span>, my name is{" "}
-						<span style={{color:'red'}}>Xavier</span>.
-						<br />
-						<br /> I am a web developer with a designer background based in
-						Canada. I’m passionate about digital works and currently looking for
-						my first job as a web developer in a company, preferably in
-						JavaScript frameworks.
-						<br />
-						<br /> Still, I keep myself open to other languages like Java, C++
-						or C#.
-						<br />
-						<br /> <span style={styles.highlight}>I have a particular set of skills</span> due to my former work
-						experiences and would be happy to make the best of it in my new
-						career in tech. I love expressionism, minimalist design,<span style={styles.highlight}>cinema</span> metal and
-						pizza.
-					</p>
+				<Box sx={styles.presentation} className="neueMontreal roll-out intro">
+					<Typography sx={{ marginBottom: "0px", fontSize: "1.1rem" }}>
+						I am a full-stack developer with a designer background based in
+						Montréal, Canada. <br />I may be at the start of this career but I
+						put the work in and learning everyday fuels the passion of
+						programming I discovered myself undergoing a vocational retraining recently.
+						<br />I keep challenging myself and can't wait to be challenged by
+						you!
+					</Typography>
+					<Button size='large' sx={styles.button} >CONTACT ME </Button>
 				</Box>
 			</Grid>
 			<Grid xs={12}>
-				<Grid item xs={12} sx={{ pt: 5, height: "100vh" }}>
-					<Box>
-						<Typography sx={styles.subtitle}>ABOUT ME</Typography>
-					</Box>
-				</Grid>
-				<Grid item xs={12} >
-				<img style={styles.backitem2} src='../backitem.png' alt="red stripes" />
-
-				<Typography sx={styles.subtitle}>MY WORKS</Typography>
-					<Projects />
-				</Grid>
-				<Grid item xs={12} sx={{ pt: 2.5 }}>
-				<Typography sx={styles.subtitle}>CONTACT ME</Typography>
-				</Grid>
+				<About />
+				<Projects />
+				<Contact />
 			</Grid>
 		</Grid>
 	);
@@ -93,7 +72,7 @@ const styles = {
 		objectFit: "fill",
 		height: "100%",
 		width: "100%",
-		overflow:'hidden',
+		overflow: "hidden",
 		zIndex: "-1",
 		position: "absolute",
 		top: "0px",
@@ -105,11 +84,11 @@ const styles = {
 		fontSize: "12rem",
 		lineHeight: "8rem",
 		textAlign: "start",
-		mt: {md:14},
+		mt: { md: 14 },
 	},
 	dateContainer: {
-		mt: {xs:0, md:12.5},
-		mr:'2rem',
+		mt: { xs: 0, md: 12.5 },
+		mr: "2rem",
 		display: { xs: "none", md: "flex" },
 		justifyContent: "flex-end",
 		alignItems: "center",
@@ -117,34 +96,17 @@ const styles = {
 	headerElements: {
 		marginLeft: "1.7rem",
 	},
-	subtitle:{
-		fontFamily: "TuskerGrotesk-2600Semibold",
-		fontSize: '7rem',
-		color: '#fdf0d5',
-		borderBottom: '0.5px solid rgba(253, 240, 213, 0.5)', 
-	},
 	presentation: {
 		backgroundColor: "#282c34",
-		marginBottom: "2rem",
-		marginTop:'2rem',
+		marginTop: 5,
 	},
-	highlight:{
-		color:'orange',
-		fontWeight: 'bold',
+	button: {
+		color: "#fdf0d5",
+		mt:2, 
+		padding:1.3,
+		fontSize: "1rem",
+		borderRadius: "35px",
+		border: "1px solid #fdf0d5",
+		"&:hover": { backgroundColor: "#fdf0d5", color: "#282c34" },
 	},
-	// backitem:{
-	// 	width: "100%",
-	// 	overflow:'hidden',
-	// 	zIndex: "-1",
-	// 	position: "absolute",
-	// 	top: "110rem",
-	// 	left: "0px",
-	// },
-	backitem2:{
-		width: "100%",
-		overflow:'hidden',
-		zIndex: "-1",
-		position: "absolute",
-		left: "0px",
-	}
 };

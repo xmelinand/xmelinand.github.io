@@ -158,7 +158,9 @@ const projects = [
 			"EJS",
 		],
 		languages: ["HTML", "CSS", "JavaScript"],
-		description: "Merchant Website using Stripe for payments, Express backend.",
+		description: <p>2 days sprint collaboration w/  
+        <a href='https://ban-works.github.io'> Ban-Works</a> <br/>
+        Train reservation website, express backend with use of mongoDB to store bookable journeys, working searchbar, error management, safe authentication, user history.</p>,
 	},
 	{
 		name: "BikeShop",

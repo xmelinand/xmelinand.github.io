@@ -80,11 +80,11 @@ function Navbar(props) {
 							</Typography>
 						</Box>
 					<Typography sx={{ mr:'auto', display: { xs: "none", md: "flex" } }}>
-						FULL STACK // REACT DEVELOPER // REACT NATIVE DEVELOPER
+						FULL STACK // REACT DEVELOPER & REACT NATIVE DEVELOPER
 					</Typography>
 					<Box sx={{ display: { xs: "none", md: "block" } }}>
 						{navItems.map((item) => (
-							<Button key={item} sx={{ color: "#fff" }}>
+							<Button key={item} sx={styles.navItems}>
 								{item}
 							</Button>
 						))}
@@ -125,6 +125,27 @@ const styles = {
 		  transition:'1s'
 	  },
 	},
+	navItems:{
+		color: 'white',
+		position: 'relative',
+	
+		'&:before': {
+		  content: "''",
+		  position: 'absolute',
+		  width: '0',
+		  height: '2px',
+		  bottom: '0px',
+		  left: '50%',
+		  transform: 'translate(-50%,0%)',
+		  backgroundColor: 'red',
+		  visibility: 'hidden',
+		  transition: 'all 0.2s ease-in-out',
+		},
+		'&:hover:before': {
+		  visibility: 'visible',
+		  width: '100%',
+		},
+	  },
 	drawerSx:{
 		display: { xs: "block", md: "none" },
 		"& .MuiDrawer-paper": {
