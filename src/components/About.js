@@ -65,6 +65,7 @@ export default function About() {
 
 const styles = {
 	subtitle: {
+        paddingTop: "50px",
 		fontFamily: "TuskerGrotesk-2600Semibold",
 		fontSize: "7rem",
 		color: "#fdf0d5",

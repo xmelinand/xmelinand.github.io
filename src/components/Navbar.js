@@ -12,6 +12,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { connect } from "react-redux";
+
 
 const navItems = ["ABOUT", "WORKS", "CONTACT"];
 
@@ -28,15 +30,7 @@ function Navbar(props) {
 		sx={styles.listItems}
 			key={item}
 			disablePadding
-			onClick={() => {
-				if (item === "About") {
-					console.log("clicked about");
-				} else if (item === "Home") {
-					console.log("clicked home");
-				} else if (item === "Contact") {
-					console.log("clicked contact");
-				}
-			}}
+			onClick={() => props.clicked(item)}
 		>
 			<ListItemButton sx={{ textAlign: "center" }}>
 				<ListItemText primary={item} />
@@ -75,7 +69,7 @@ function Navbar(props) {
 							<img height="20rem" alt='orange x-shaped logo' src="../../icon.png" />
 						</Box>
 						<Box>
-							<Typography sx={{ mr: 3, fontFamily: "migra" }}>
+							<Typography sx={{ fontFamily: "migra" }}>
 								xavierMELINAND
 							</Typography>
 						</Box>
@@ -84,7 +78,7 @@ function Navbar(props) {
 					</Typography>
 					<Box sx={{ display: { xs: "none", md: "block" } }}>
 						{navItems.map((item) => (
-							<Button key={item} sx={styles.navItems}>
+							<Button onClick={() => props.clicked(item)} key={item} sx={styles.navItems}>
 								{item}
 							</Button>
 						))}
@@ -108,8 +102,6 @@ function Navbar(props) {
 		</Box>
 	);
 }
-
-export default Navbar;
 
 const styles = {
 	appBar:{
@@ -155,3 +147,14 @@ const styles = {
 		},
 	}
 }
+
+function mapDispatchToProps(dispatch) {
+	return {
+	  clicked: function (item) { 
+		dispatch({ type: "clicked", clicked:item }, );
+	}
+  }
+}
+  
+  export default connect(null, mapDispatchToProps)(Navbar);
+  

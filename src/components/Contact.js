@@ -15,14 +15,15 @@ import {
 
 
 export default function Contact() {
-	const interests = [
+    const interests = [
+        "New Projects",
 		"Frontend Development",
 		"Backend development",
 		"UI/UX design",
-		"Opportunities",
+		"Job Opportunities",
 		"New techs",
 		"Pizza",
-		"Stoner Rock Bands",
+        "Music"
 	];
 
 	return (
@@ -74,6 +75,7 @@ export default function Contact() {
 
 const styles = {
 	subtitle: {
+        paddingTop: "50px",
 		fontFamily: "TuskerGrotesk-2600Semibold",
 		fontSize: "7rem",
 		color: "#fdf0d5",
@@ -88,8 +90,7 @@ const styles = {
 		backgroundRepeat: "no-repeat",
 	},
 	contact: {
-		p: 2,
-		mt: 2.5,
+		mt: 6,
 		display: "flex",
 		justifyContent: "space-between",
 		"& > :not(style)": { m: 0.5 },
@@ -97,7 +98,7 @@ const styles = {
 	catch: {
 		fontFamily: "TuskerGrotesk-2600Semibold",
 		textTransform: "uppercase",
-		fontSize: "30vh",
+		fontSize: "28vh",
 		lineHeight: "32vh",
 	},
 	interests: {

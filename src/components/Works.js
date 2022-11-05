@@ -50,6 +50,7 @@ const styles = {
 		left: "0px",
 	},
     subtitle: {
+        paddingTop: "50px",
 		fontFamily: "TuskerGrotesk-2600Semibold",
 		fontSize: "7rem",
 		color: "#fdf0d5",

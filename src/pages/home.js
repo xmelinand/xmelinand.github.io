@@ -1,20 +1,43 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { React } from "react";
+import { React, useEffect, useRef } from "react";
 import { Grid, Box, Typography, Button } from "@mui/material";
 import Projects from "../components/Works";
 import Contact from "../components/Contact";
 import About from "../components/About";
+import { connect } from "react-redux";
 
-function Home() {
+function Home(props) {
 	const date = new Date().toUTCString().split(" ");
 	const today = date[1];
 	const month = date[2];
+
+	const about = useRef(true);
+	const works = useRef(null);
+	const contact = useRef(null);
+
+	const handleScroll = (ref) => {
+		ref.current.scrollIntoView(true);
+	}
+
+	//* Scroll links handling
+	useEffect(
+		() => {
+			if ( props.clickedItem === 'ABOUT') {
+				handleScroll(about);
+			} else if ( props.clickedItem === 'WORKS' ){
+				handleScroll(works);
+			} else if ( props.clickedItem === 'CONTACT'){
+				handleScroll(contact);
+			}
+		},
+		[props.clickedItem] 
+	)
 
 	return (
 		<Grid container={true} sx={styles.container}>
 			<video autoPlay muted loop src="../Vid.mp4" style={styles.video} />
 			{/* //* left content */}
-			<Grid xs={12} md={6} sx={{ paddingTop: "2rem" }}>
+			<Grid item xs={12} md={6} sx={{ paddingTop: "2rem" }}>
 				<Typography sx={styles.title} className="roll-out">
 					<span className="migra" style={{ fontSize: "2rem" }}>
 						Really cool
@@ -30,7 +53,7 @@ function Home() {
 				</Typography>
 			</Grid>
 			{/* //* Date + Bio */}
-			<Grid xs={12} md={6}>
+			<Grid item xs={12} md={6}>
 				<Box sx={styles.dateContainer} className="roll-out">
 					<p className="day maelstrom">{today}</p>
 					<div className="month">
@@ -49,20 +72,31 @@ function Home() {
 						<br />I keep challenging myself and can't wait to be challenged by
 						you!
 					</Typography>
-					<Button size='large' sx={styles.button} >CONTACT ME </Button>
+					<Button size='large' sx={styles.button} onClick={() => handleScroll(contact)}>CONTACT ME </Button>
 				</Box>
 			</Grid>
-			<Grid xs={12}>
+			<Grid item xs={12}>
+				<Grid ref={about}>
 				<About />
+					</Grid> 
+					<Grid ref={works}>
+
 				<Projects />
+				</Grid>
+				<Grid ref={contact}>
 				<Contact />
+				</Grid>
 			</Grid>
 		</Grid>
 	);
 }
 
-export default Home;
-
+//STATE-PROPS
+function mapStateToProps(state) {
+	return { clickedItem: state.links };
+  }
+  
+  export default connect(mapStateToProps, null)(Home);
 const styles = {
 	container: {
 		objectFit: "fill",

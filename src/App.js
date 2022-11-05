@@ -8,11 +8,17 @@ import { Container } from '@mui/material'
 
 import Home from "./pages/home.js";
 import Navbar from "./components/Navbar";
+import links from "./reducers/links";
+import {Provider} from 'react-redux';
+import {createStore, combineReducers}  from 'redux';
+
+const store = createStore(combineReducers({links}));
+
 
 function App() {
   
   return (
-    <>
+    <Provider store={store}>
     <Navbar />
     <Container disableGutters sx={{objectFit:'fill'}}>
     <Router>
@@ -21,7 +27,7 @@ function App() {
     </Switch>
   </Router>
   </Container>
-  </>
+  </Provider>
   );
 }
 
