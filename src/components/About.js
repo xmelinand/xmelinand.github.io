@@ -26,19 +26,17 @@ export default function About() {
 					<Typography
 						sx={{
 							textTransform: "none",
-							textAlign: "center",
 							fontFamily: "Migra-Semibold",
-                            fontSize: "1.8rem",
+                            fontSize: "1.3rem",
 						}}
 					>
 						Xavier Melinand
 					</Typography>
 					<br />
 					<Typography sx={{fontSize:"1.3rem"}}> I’m passionate about digital works and currently looking for
-					my first job as a web developer in a company, preferably in JavaScript
+					a job as a web developer in a company, preferably in JavaScript
 					frameworks.
-					<br /> Still, I keep myself open to other languages like Java, C++ or
-					C#.
+					<br /> Still, I keep myself open to other languages.
 					<br />
 					<br />{" "}
 					<span style={styles.highlight}>

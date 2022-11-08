@@ -1,19 +1,20 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { connect } from "react-redux";
-
+import {
+	AppBar,
+	Box,
+	Divider,
+	Drawer,
+	IconButton,
+	List,
+	ListItem,
+	ListItemText,
+	ListItemButton,
+	Toolbar,
+	Typography,
+	Button,
+} from "@mui/material";
 
 const navItems = ["ABOUT", "WORKS", "CONTACT"];
 
@@ -27,7 +28,7 @@ function Navbar(props) {
 
 	const drawerItems = navItems.map((item) => (
 		<ListItem
-		sx={styles.listItems}
+			sx={styles.listItems}
 			key={item}
 			disablePadding
 			onClick={() => props.clicked(item)}
@@ -39,8 +40,8 @@ function Navbar(props) {
 	));
 
 	const drawer = (
-		<Box onClick={handleDrawerToggle} sx={{ textAlign: "center"}}>
-			<Typography variant="h6" sx={{ my: 2, color:'orange' }}>
+		<Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+			<Typography variant="h6" sx={{ my: 2, color: "orange" }}>
 				X-WORKS
 			</Typography>
 			<Divider />
@@ -52,10 +53,9 @@ function Navbar(props) {
 		window !== undefined ? () => window().document.body : undefined;
 
 	return (
-		<Box
-		>
+		<Box>
 			<AppBar component="nav" sx={styles.appBar}>
-				<Toolbar sx={{display:'flex', justifyContent:'space-between'}}>
+				<Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
 					<IconButton
 						color="inherit"
 						aria-label="open drawer"
@@ -65,20 +65,30 @@ function Navbar(props) {
 					>
 						<MenuIcon />
 					</IconButton>
-						<Box sx={{ mr: {xs:0, md:3 }, ml:{xs:6, md:0}}}>
-							<img height="20rem" alt='orange x-shaped logo' src="../../icon.png" />
-						</Box>
-						<Box>
-							<Typography sx={{ fontFamily: "migra" }}>
-								xavierMELINAND
-							</Typography>
-						</Box>
-					<Typography sx={{ mr:'auto', display: { xs: "none", md: "flex" } }}>
+					<Box sx={{ mr: { xs: 0, md: 3 }, ml: { xs: 6, md: 0 } }}>
+						<img
+							height="20rem"
+							alt="orange x-shaped logo"
+							src="../../icon.png"
+						/>
+					</Box>
+					<Box>
+						<Typography sx={{ fontFamily: "migra", pt: "2px©" }}>
+							xavierMELINAND
+						</Typography>
+					</Box>
+					<Typography
+						sx={{ ml: 3, mr: "auto", display: { xs: "none", md: "flex" } }}
+					>
 						FULL STACK // REACT DEVELOPER & REACT NATIVE DEVELOPER
 					</Typography>
 					<Box sx={{ display: { xs: "none", md: "block" } }}>
 						{navItems.map((item) => (
-							<Button onClick={() => props.clicked(item)} key={item} sx={styles.navItems}>
+							<Button
+								onClick={() => props.clicked(item)}
+								key={item}
+								sx={styles.navItems}
+							>
 								{item}
 							</Button>
 						))}
@@ -104,57 +114,56 @@ function Navbar(props) {
 }
 
 const styles = {
-	appBar:{
-		color: '#fdf0d5',
-		background: 'rgba(0, 0, 0, 0.1)',
-		backdropFilter: 'blur(8px)',
-	  },
-	listItems:{
-		backgroundColor: 'transparent',
-		color: '#fff',
-		'&:hover': {
-		  backgroundColor: '#1c1f25',
-		  transition:'1s'
-	  },
+	appBar: {
+		color: "#fdf0d5",
+		background: "rgba(0, 0, 0, 0.1)",
+		backdropFilter: "blur(8px)",
 	},
-	navItems:{
-		color: 'white',
-		position: 'relative',
-	
-		'&:before': {
-		  content: "''",
-		  position: 'absolute',
-		  width: '0',
-		  height: '2px',
-		  bottom: '0px',
-		  left: '50%',
-		  transform: 'translate(-50%,0%)',
-		  backgroundColor: 'red',
-		  visibility: 'hidden',
-		  transition: 'all 0.2s ease-in-out',
+	listItems: {
+		backgroundColor: "transparent",
+		color: "#fff",
+		"&:hover": {
+			backgroundColor: "#1c1f25",
+			transition: "1s",
 		},
-		'&:hover:before': {
-		  visibility: 'visible',
-		  width: '100%',
+	},
+	navItems: {
+		color: "white",
+		position: "relative",
+
+		"&:before": {
+			content: "''",
+			position: "absolute",
+			width: "0",
+			height: "2px",
+			bottom: "0px",
+			left: "50%",
+			transform: "translate(-50%,0%)",
+			backgroundColor: "red",
+			visibility: "hidden",
+			transition: "all 0.2s ease-in-out",
 		},
-	  },
-	drawerSx:{
+		"&:hover:before": {
+			visibility: "visible",
+			width: "100%",
+		},
+	},
+	drawerSx: {
 		display: { xs: "block", md: "none" },
 		"& .MuiDrawer-paper": {
 			boxSizing: "border-box",
-			width: {xs:250, md:400},
-			backgroundColor:"#282c34" 
+			width: { xs: 250, md: 400 },
+			backgroundColor: "#282c34",
 		},
-	}
-}
+	},
+};
 
 function mapDispatchToProps(dispatch) {
 	return {
-	  clicked: function (item) { 
-		dispatch({ type: "clicked", clicked:item }, );
-	}
-  }
+		clicked: function (item) {
+			dispatch({ type: "clicked", clicked: item });
+		},
+	};
 }
-  
-  export default connect(null, mapDispatchToProps)(Navbar);
-  
+
+export default connect(null, mapDispatchToProps)(Navbar);
