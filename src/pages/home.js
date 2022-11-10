@@ -103,9 +103,9 @@ const styles = {
 		padding: { xs: 3, lg: 0 },
 	},
 	video: {
-		objectFit: "fill",
-		height: "100%",
-		width: "100%",
+		objectFit: "cover",
+		height: "100vh",
+		minWidth: "100%",
 		overflow: "hidden",
 		zIndex: "-1",
 		position: "absolute",
