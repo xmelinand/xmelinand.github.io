@@ -44,7 +44,7 @@ export default function About() {
 					</span>{" "}
 					due to my former work experiences and would be happy to make the best
 					of it in my new career in tech.
-					<br /> I'm a people person and i work well teams, have been doing it for the last 1O years.
+					<br /> I'm a people person and i work well in teams, have been doing it for the last 1O years.
 					<br />
 					<br /> I love expressionism, minimalist design,
 					<span style={styles.highlight}> cinema</span>, metal and pizza.

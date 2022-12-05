@@ -35,7 +35,7 @@ function Home(props) {
 
 	return (
 		<Grid container={true} sx={styles.container}>
-			<video autoPlay muted loop src="../Vid.mp4" style={styles.video} />
+			<video autoPlay muted loop src="../Vid.mp4" width="100vw" style={styles.video} />
 			{/* //* left content */}
 			<Grid item xs={12} md={6} sx={{ paddingTop: "2rem" }}>
 				<Typography sx={styles.title} className="roll-out">
