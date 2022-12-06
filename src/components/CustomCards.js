@@ -55,7 +55,7 @@ const CustomCards = ({
 					<Button className="App-link" onClick={handleExpandClick}>
 						Details
 					</Button>
-					<Button href={repository} className="App-link">
+					<Button href={repository} target='blank' className="App-link">
 						View Code
 					</Button>
 
